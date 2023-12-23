@@ -1,0 +1,68 @@
+/* ForgotPass.css */
+
+/* Container styling */
+.forgot-pass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dadcde;
+}
+
+/* Form styling */
+.forgot_pass_form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+/* Heading styling */
+.forgot-pass-heading {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Input styling */
+.forgot-pass-input {
+  width: calc(100% - 16px); /* Adjusted width to account for margin */
+  padding: 8px;
+  margin: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+.forgot-pass-input:focus {
+  border-color: #007bff;
+}
+
+/* Button styling */
+.forgot-pass-button {
+  width: 40%; /* Half width of the container */
+  margin: 0 auto; /* Center the button */
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forgot-pass-button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s ease;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .forgot_pass_form {
+    width: 80%;
+  }
+}

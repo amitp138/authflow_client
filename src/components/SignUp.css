@@ -1,0 +1,88 @@
+/* SignUp.css */
+
+.signup {
+  background-color: #dadcde;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 400px;
+  background-color: #f8f9fa;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+form > h1 {
+  border-bottom: 1px solid #dadcde;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+}
+
+form > input.signup-input {
+  width: 100%; /* Make the input field responsive */
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+form > input.invalid:focus {
+  border-color: red;
+}
+
+/* Password Hint Styling */
+.password-hint {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.password-hint.valid {
+  color: green;
+}
+
+.password-hint.invalid {
+  color: red;
+}
+
+form > button.signup-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  width: 50%;
+}
+
+form > button.signup-button:hover {
+  background-color: #2980b9;
+}
+
+/* Small devices (landscape phones) */
+@media only screen and (max-width: 576px) {
+  .signup > form {
+    width: 90%;
+    padding: 10px;
+  }
+
+  form > button.signup-button,
+  form > input.signup-input {
+    width: 90%; /* Make the input and button responsive */
+  }
+}

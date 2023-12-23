@@ -1,0 +1,87 @@
+/* SignIn.css */
+
+.container {
+  background-color: #dadcde;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 400px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+form > h1 {
+  border-bottom: 1px solid #dadcde;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+}
+
+form > .email-button,
+form > .social-button,
+form > .otp-button {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box; 
+  text-align: center;
+}
+
+form > .email-button {
+  background-color: #3498db;
+}
+
+form > .email-button:hover {
+  background-color: #2980b9;
+}
+
+form > .social-button {
+  background-color: #4caf50;
+  border: none;
+}
+
+form > .social-button:hover {
+  background-color: #45a049;
+}
+
+form > .otp-button {
+  background-color: #e74c3c;
+}
+
+form > .otp-button:hover {
+  background-color: #d52c00;
+}
+
+/* Small devices (landscape phones) */
+@media only screen and (max-width: 576px) {
+  .container > form {
+    width: 90%;
+    padding: 10px;
+  }
+
+  form > .email-button,
+  form > .social-button,
+  form > .otp-button {
+    width: 100%;
+  }
+}
