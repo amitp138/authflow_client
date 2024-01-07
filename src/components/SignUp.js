@@ -148,6 +148,7 @@ const SignUp = () => {
       });
 
       if (response.ok) {
+
         // Registration successful, you can handle it accordingly
         console.log("Registration successful");
         // Send email
