@@ -141,14 +141,14 @@ const SignUp = () => {
 
     // Proceed with form submission
     try {
-      const response = await fetch(process.env.REACT_APP_SIGNUP_REGISTER_URI, {
+      const response = await fetch(`${process.env.REACT_APP_SIGNUP_REGISTER_URI}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+      
       if (response.ok) {
         // Registration successful, you can handle it accordingly
         console.log("Registration successful");
