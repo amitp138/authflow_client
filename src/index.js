@@ -8,7 +8,7 @@ root.render(
   <React.StrictMode>
     <Auth0Provider
       domain={process.env.REACT_APP_DOMAIN}
-      clientId={process.env.REACT_APP_CLIENTID}
+      clientId={process.env.REACT_APP_CLIENT_ID}
       authorizationParams={{
         redirect_uri: `${process.env.REACT_APP_REDIRECT_URI}`,
       }}
