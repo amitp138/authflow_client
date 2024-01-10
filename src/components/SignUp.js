@@ -1,12 +1,13 @@
 // SignUp.js
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -158,10 +159,9 @@ const SignUp = () => {
           await emailjs.sendForm(
             process.env.REACT_APP_SERVICE_ID,
             process.env.REACT_APP_WELCOME_TEMPLATE_ID,
-            formData,
+            formRef.current,
             process.env.REACT_APP_PUBLIC_KEY
           );
-
           // Email sent successfully
           console.log("Email sent successfully");
           navigate("/");
@@ -185,7 +185,7 @@ const SignUp = () => {
 
   return (
     <div className="signup">
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <h1>SignUp</h1>
         <input
           type="text"
