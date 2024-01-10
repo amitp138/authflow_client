@@ -13,7 +13,8 @@ root.render(
         redirect_uri: `${process.env.REACT_APP_REDIRECT_URI}`,
       }}
     >
-      <App  />
+
+      <App/>
     </Auth0Provider>
   </React.StrictMode>
 );
