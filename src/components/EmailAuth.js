@@ -46,7 +46,7 @@ const EmailAuth = () => {
       return;
     }
     try {
-      const response = await fetch(process.env.REACT_APP_EMAIL_AUTH_URI, {
+      const response = await fetch(`${process.env.REACT_APP_EMAIL_AUTH_URI}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

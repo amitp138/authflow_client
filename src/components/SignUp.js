@@ -157,10 +157,10 @@ const SignUp = () => {
         try {
           // Use emailjs to send an email
           await emailjs.sendForm(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_WELCOME_TEMPLATE_ID,
+            `${process.env.REACT_APP_SERVICE_ID}`,
+            `${process.env.REACT_APP_WELCOME_TEMPLATE_ID}`,
             formRef.current,
-            process.env.REACT_APP_PUBLIC_KEY
+            `${process.env.REACT_APP_PUBLIC_KEY}`
           );
           // Email sent successfully
           console.log("Email sent successfully");

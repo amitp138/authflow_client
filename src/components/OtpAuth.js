@@ -34,7 +34,7 @@ const OtpAuth = () => {
     try {
       if (isOtpSent) {
         // Verify OTP
-        const response = await fetch(process.env.REACT_APP_OTP_AUTH_VERIFY_URI, {
+        const response = await fetch(`${process.env.REACT_APP_OTP_AUTH_VERIFY_URI}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const OtpAuth = () => {
         }
       } else {
         // Send OTP
-        const response = await fetch(process.env.REACT_APP_OTP_AUTH_SENT_OTP_URI, {
+        const response = await fetch(`${process.env.REACT_APP_OTP_AUTH_SENT_OTP_URI}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

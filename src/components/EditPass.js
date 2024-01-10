@@ -123,7 +123,7 @@ const EditPass = () => {
     }
     try {
       const Isresetted = await fetch(
-        process.env.REACT_APP_UPDATE_PASSWORD_URI,
+        `${process.env.REACT_APP_UPDATE_PASSWORD_URI}`,
         {
           method: "POST",
           headers: {

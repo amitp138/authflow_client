@@ -39,7 +39,7 @@ const ForgotPass = () => {
 
       // Make a POST request to your backend to handle password reset
       const response = await fetch(
-        process.env.REACT_APP_FORGOT_PASSWORD_RESET_URI,
+        `${process.env.REACT_APP_FORGOT_PASSWORD_RESET_URI}`,
         {
           method: "POST",
           headers: {
@@ -54,10 +54,10 @@ const ForgotPass = () => {
         const { resetUrl } = await response.json();
         try {
           await emailjs.sendForm(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_RESET_TEMPLATE_ID,
+            `${process.env.REACT_APP_SERVICE_ID}`,
+            `${process.env.REACT_APP_RESET_TEMPLATE_ID}`,
             { resetUrl, email }, // Send the reset URL directly
-            process.env.REACT_APP_PUBLIC_KEY
+            `${process.env.REACT_APP_PUBLIC_KEY}`
           );
 
           // Password reset email sent successfully
