@@ -138,7 +138,6 @@ const SignUp = () => {
       alert(`Please fix the following fields: ${invalidFields.join(", ")}`);
       return;
     }
-
     // Proceed with form submission
     try {
       const response = await fetch(`${process.env.REACT_APP_SIGNUP_REGISTER_URI}`, {
@@ -148,11 +147,9 @@ const SignUp = () => {
         },
         body: JSON.stringify(formData),
       });
-      
       if (response.ok) {
         // Registration successful, you can handle it accordingly
         console.log("Registration successful");
-
         // Send email
         try {
           // Use emailjs to send an email
