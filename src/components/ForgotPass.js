@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ForgotPass.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 const ForgotPass = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -44,14 +45,28 @@ const ForgotPass = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ em:email }),
+          body: JSON.stringify({ em: email }),
         }
       );
 
       if (response.ok) {
-        // Password reset request successful
-        setSuccess(true);
-        
+        // Password reset url
+        const { resetUrl } = await response.json();
+        try {
+          await emailjs.sendForm(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_RESET_TEMPLATE_ID,
+            { resetUrl, email }, // Send the reset URL directly
+            process.env.REACT_APP_PUBLIC_KEY
+          );
+
+          // Password reset email sent successfully
+          setSuccess(true);
+        } catch (emailError) {
+          // Handle error sending email
+          console.error("Error sending email:", emailError);
+          setError("An unexpected error occurred while sending the email.");
+        }
       } else {
         // Handle error cases
         setError("Password reset request failed");
@@ -89,7 +104,8 @@ const ForgotPass = () => {
         {error && <p className="error-message">{error}</p>}
         {success && (
           <p className="success-message">
-            Password reset request successful. Check your email for instructions.
+            Password reset request successful. Check your email for
+            instructions.
             <Link to="/">back to home </Link>
           </p>
         )}

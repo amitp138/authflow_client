@@ -157,7 +157,7 @@ const SignUp = () => {
           // Use emailjs to send an email
           await emailjs.sendForm(
             process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
+            process.env.REACT_APP_WELCOME_TEMPLATE_ID,
             formData,
             process.env.REACT_APP_PUBLIC_KEY
           );
