@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -148,31 +149,28 @@ const SignUp = () => {
       });
 
       if (response.ok) {
-
         // Registration successful, you can handle it accordingly
         console.log("Registration successful");
+
         // Send email
-        const emailResponse = await fetch(
-          process.env.REACT_APP_SIGNUP_WELCOME_MESSAGE_URI,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              toemail: formData.email,
-              username: formData.username,
-            }),
-          }
-        );
-        const result = await emailResponse.json();
-        if (result.success) {
+        try {
+          // Use emailjs to send an email
+          await emailjs.sendForm(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE_ID,
+            formData,
+            process.env.REACT_APP_PUBLIC_KEY
+          );
+
           // Email sent successfully
-          console.log("Welcome email sent successfully");
+          console.log("Email sent successfully");
           navigate("/");
-        } else {
+        } catch (emailError) {
           // Handle email sending error
-          console.error("Failed to send welcome email");
+          console.error("Error sending email:", emailError);
+          alert(
+            "An unexpected error occurred while sending the email. Please try again later."
+          );
         }
       } else {
         // Handle registration error
