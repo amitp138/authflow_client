@@ -1,19 +1,12 @@
 // SignIn.js
-import React, { useEffect } from "react";
+import React from "react";
 import "./SignIn.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const SignIn = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
-  useEffect(() => {
-    console.log("Is authenticated:", isAuthenticated);
-    if (isAuthenticated) {
-      console.log("Redirecting to /auth/user");
-      navigate("/auth/user");
-    }
-  }, [isAuthenticated, navigate]);
+  const { loginWithRedirect } = useAuth0();
+
   return (
     <div className="container">
       <form>
@@ -30,7 +23,11 @@ const SignIn = () => {
         <button
           type="button"
           className="social-button"
-          onClick={() => loginWithRedirect()}
+          onClick={() =>
+            loginWithRedirect({
+              redirectUri: `${process.env.REACT_APP_REDIRECT_URI_AFTER_LOGIN}`,
+            })
+          }
         >
           Auth0
         </button>
