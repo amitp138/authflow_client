@@ -1,12 +1,19 @@
 // SignIn.js
-import React from "react";
+import React, { useEffect } from "react";
 import "./SignIn.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const SignIn = () => {
-  const { loginWithRedirect } = useAuth0();
-
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log("Is authenticated:", isAuthenticated);
+    if (isAuthenticated) {
+      console.log("Redirecting to /auth/user");
+      navigate("/auth/user");
+    }
+  }, [isAuthenticated, navigate]);
   return (
     <div className="container">
       <form>
