@@ -9,7 +9,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
-      navigate(`${process.env.REACT_APP_REDIRECT_URI}/auth/user`);
+      navigate("/auth/user");
     }
   }, [isAuthenticated,navigate]);
   return (
@@ -30,7 +30,7 @@ const SignIn = () => {
           className="social-button"
           onClick={() => loginWithRedirect()}
         >
-          LinkedIn/Git/Google
+          Auth0
         </button>
       </form>
     </div>
