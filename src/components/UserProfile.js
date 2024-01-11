@@ -29,9 +29,10 @@ const UserProfile = () => {
               grant_type: 'authorization_code',
               client_id: `${process.env.REACT_APP_CLIENT_ID}`,
               client_secret: `${process.env.REACT_APP_CLIENT_SECRET}`,
-              codeFromQuery,
+              code: codeFromQuery,  // Change this line
               redirect_uri: `${process.env.REACT_APP_REDIRECT_URI_AFTER_LOGIN}`,
             }),
+            
           });
   
           const data = await response.json();
