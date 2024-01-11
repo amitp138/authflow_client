@@ -48,7 +48,6 @@ const ForgotPass = () => {
           body: JSON.stringify({ em: email }),
         }
       );
-
       if (response.ok) {
         // Password reset url
         const { resetUrl } = await response.json();
@@ -59,7 +58,6 @@ const ForgotPass = () => {
             { resetUrl, email }, // Send the reset URL directly
             `${process.env.REACT_APP_PUBLIC_KEY}`
           );
-
           // Password reset email sent successfully
           setSuccess(true);
         } catch (emailError) {
