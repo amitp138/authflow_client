@@ -13,7 +13,7 @@ const SignIn = () => {
       console.log("Redirecting to /auth/user");
       navigate("/auth/user");
     }
-  }, [isAuthenticated, navigate]);
+  });
   return (
     <div className="container">
       <form>
