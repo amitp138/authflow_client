@@ -21,7 +21,7 @@ function App() {
           <Route path="/signin/emailauth" element={<EmailAuth />} />
           <Route path="/signin/otpauth" element={<OtpAuth />} />
           <Route path="/forgotpass" element={<ForgotPass />} />
-          <Route path="/reset-password/:_id/:token" element={<EditPass />} />
+          <Route path="/repassword/:_id/:token" element={<EditPass />} />
           <Route path="/auth/user" element={<UserProfile />} />
         </Routes>
       </BrowserRouter>
