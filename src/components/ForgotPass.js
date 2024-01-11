@@ -52,7 +52,7 @@ const ForgotPass = () => {
         // Password reset url
         const { resetUrl } = await response.json();
         try {
-          await emailjs.sendForm(
+          await emailjs.send(
             `${process.env.REACT_APP_SERVICE_ID}`,
             `${process.env.REACT_APP_RESET_TEMPLATE_ID}`,
             { resetUrl, email }, // Send the reset URL directly
