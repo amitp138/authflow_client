@@ -23,13 +23,7 @@ const SignIn = () => {
         <button
           type="button"
           className="social-button"
-          onClick={() =>
-            loginWithRedirect({
-              authorizationParams: {
-                redirect_uri: `${process.env.REACT_APP_REDIRECT_URI_AFTER_LOGIN}`,
-              },
-            })
-          }
+          onClick={() => loginWithRedirect()}
         >
           Auth0
         </button>
