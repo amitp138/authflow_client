@@ -11,7 +11,7 @@ const SignIn = () => {
     if (isAuthenticated) {
       navigate(`${process.env.REACT_APP_REDIRECT_URI}/auth/user`);
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated,navigate]);
   return (
     <div className="container">
       <form>
