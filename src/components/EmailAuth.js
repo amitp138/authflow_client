@@ -87,7 +87,7 @@ const EmailAuth = () => {
           value={formData.username}
         />
         <input
-          type="text"
+          type="email"
           name="email"
           className={`login-input ${
             emailValidation.isValid ? "valid" : "invalid"
