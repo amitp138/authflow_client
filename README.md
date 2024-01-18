@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+### Problem Statement:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal is to create a user-friendly and secure Login/SignUp page that facilitates user authentication and account creation for a web application .
+### Implementation Steps
 
-## Available Scripts
+1)Frontend Setup:
 
-In the project directory, you can run:
+Ensure that the existing React.js project named "authflow" is set up and functional.
+If not already done, create a Home Page component with "Login" and "SignUp" buttons.
+Implement routing using React Router Dom to navigate between the Home Page, SignUp Form, and Login Form.
 
-### `npm start`
+2)Enhance SignUp Form:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Review the existing SignUpForm component and make sure it includes fields for Email, Username, Password, and Confirm Password.
+If not already done, apply validation rules for each field.
+Utilize state management for form data using useState.
+Ensure the existing integration of "react-google-login" and "react-github-login" for third-party sign-up options is functional.
+Review and enhance the validation rules:
+All fields are required. Display an error message if any field is left blank.
+Email: Must be in a valid email address format.
+Username: Must be unique and follow specified username rules.
+Password: Must meet complexity requirements (e.g., minimum length, special characters, uppercase/lowercase letters).
+Confirm Password: Must match the password provided.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3)Sign Up Functionality:
 
-### `npm test`
+Implement the "Sign Up" button functionality to send user data to the backend (MongoDB).
+Ensure bcrypt is used to hash and store passwords securely.
+Send Welsome Message using any mail apis  (e.g., Emailjs for email).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4)Enhance Login Form:
 
-### `npm run build`
+Create a separate LoginForm component with fields for Email/Phone and Password.
+Implement basic validation for email/phone and password fields.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5)Third-Party Login:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ensure users can log in using LinkedIn and GitHub accounts using the existing third-party login components.
+Login Functionality:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Implement the "Login" button functionality to authenticate users against stored credentials.
+Set up JWT (JSON Web Tokens) for secure user authentication.
 
-### `npm run eject`
+6)OTP Login:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ensure the existing option for login using OTP is functional.
+If not already done, integrate a library like react-otp-input for OTP input.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+7)Forgot Password:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If not already done, implement the "Forgot Password" functionality.
+Set up a mechanism to send a password reset email.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+8)Redirection After Login:
 
-## Learn More
+Set up routing to redirect users to a welcome page after successful login.
+Create a WelcomePage component for displaying a welcome message.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+9)Testing:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Test the entire authentication flow, including sign up, login, third-party login, OTP login, and password reset.
+Debug and fix any issues that arise during testing.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Tools for Implementation
 
-### Analyzing the Bundle Size
+1)React.js for the frontend.
+2)React Router Dom for routing.
+3)MongoDB for the backend database.
+4)Node.js and Express for the backend server.
+5)Bcrypt for password hashing.
+6)JSON Web Tokens (JWT) for secure authentication.
+7)Third-party libraries like Auth0 for additional functionalities.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Time for completion this project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I can complete this task in 8 days. I will dedicate 1.5 hours each day to complete it.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
